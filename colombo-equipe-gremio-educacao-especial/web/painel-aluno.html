@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="claro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2d38a8">
+  <title>Painel do aluno · Colombo</title>
+  <link rel="icon" href="assets/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/painel-aluno.css">
+</head>
+<body>
+<div class="app">
+  <aside class="side" id="side">
+    <div class="side-head">
+      <img src="assets/logo.jpg" alt="Logo Colombo de Almeida" class="side-logo">
+      <div><strong>Colombo de Almeida</strong><small id="sideSub">Área do aluno</small></div>
+    </div>
+    <nav class="nav" id="nav" aria-label="Menu principal"></nav>
+    <button class="logout" id="logout"></button>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+
+  <div class="main">
+    <header class="top">
+      <button class="burger" id="burger" aria-label="Abrir menu"></button>
+      <h1 id="title">Início</h1>
+      <div class="who">
+        <button class="who-btn" id="whoBtn" aria-haspopup="menu" aria-expanded="false" aria-label="Abrir menu do perfil">
+          <span id="whoName">Aluno</span>
+          <span class="avatar-wrap"><img id="avatarTop" class="avatar" alt="Foto de perfil"><i class="cam" id="camBadge"></i></span>
+        </button>
+        <div class="menu" id="profileMenu" role="menu" hidden>
+          <div class="menu-head"><img id="avatarMenu" class="avatar" alt=""><div><strong id="menuName">Aluno</strong><small id="menuSub"></small></div></div>
+          <button role="menuitem" id="mFoto"></button>
+          <button role="menuitem" id="mRemover"></button>
+          <button role="menuitem" data-go="dados" id="mDados"></button>
+          <button role="menuitem" data-go="config" id="mConfig"></button>
+          <hr>
+          <button role="menuitem" class="danger" id="mSair"></button>
+        </div>
+      </div>
+    </header>
+    <main id="content" class="content"></main>
+  </div>
+</div>
+<input type="file" id="fotoInput" accept="image/*" hidden>
+<script src="js/core.js"></script>
+<script src="js/links.js"></script>
+<script src="js/turmas.js"></script>
+<script src="js/docencia.js"></script>
+<script src="js/gvis.js"></script>
+<script src="js/painel-aluno.js"></script>
+</body>
+</html>

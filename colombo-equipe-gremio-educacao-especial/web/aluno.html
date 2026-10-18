@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2d38a8">
+  <title>Aluno · Colombo</title>
+  <link rel="icon" href="assets/logo.jpg">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/aluno.css">
+  <link rel="stylesheet" href="css/acesso.css">
+</head>
+<body class="page-aluno">
+  <main class="shell">
+    <aside class="brand-panel">
+      <a class="back" href="index.html">&larr; Trocar perfil</a>
+
+      <div class="brand-copy">
+        <div class="logo-wrap"><img class="logo" src="assets/logo.jpg" alt="Logo da E.E. Colombo de Almeida"></div>
+        <h1>Olá, aluno!</h1>
+        <p>Entre para acompanhar suas notas, faltas, avisos e tarefas em um só lugar.</p>
+        <ul class="brand-points">
+          <li>Notas e boletim sempre à mão</li>
+          <li>Frequência atualizada</li>
+          <li>Recados da escola e dos professores</li>
+        </ul>
+      </div>
+
+      <p class="brand-foot">E.E. Colombo de Almeida · App da escola</p>
+    </aside>
+
+    <section class="form-panel">
+      <div class="card">
+        <div id="formView">
+          <header class="card-head">
+            <span class="role-chip">Aluno</span>
+            <h2>Acesse sua conta</h2>
+            <p>Informe seu RA e sua matrícula.</p>
+          </header>
+
+          <div id="modeBadge" class="badge" hidden></div>
+          <div id="formStatus" class="status" role="alert" hidden></div>
+
+          <form id="loginForm" novalidate autocomplete="off">
+            <div class="field">
+              <label for="ra">RA</label>
+              <div class="input"><input id="ra" name="ra" inputmode="numeric" placeholder="Ex.: 000114320260" autocomplete="username" maxlength="13"></div>
+              <p class="field-error" hidden></p>
+            </div>
+
+            <div class="field">
+              <label for="matricula">Matrícula</label>
+              <div class="input"><input id="matricula" name="matricula" inputmode="numeric" placeholder="Ex.: 20260123" maxlength="12"></div>
+              <p class="field-error" hidden></p>
+            </div>
+
+            <div class="field">
+              <label for="password" id="passwordLabel">Senha</label>
+              <div class="input">
+                <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Sua senha">
+                <button type="button" class="toggle-pw" data-target="password" aria-label="Mostrar senha" aria-pressed="false">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+                </button>
+              </div>
+              <div class="strength" id="strength" data-level="0" hidden><i></i><i></i><i></i><i></i></div>
+              <p class="strength-label" id="strengthLabel" hidden></p>
+              <p class="field-error" hidden></p>
+            </div>
+
+            <div class="field" id="confirmField" hidden>
+              <label for="confirm">Confirme a senha</label>
+              <div class="input">
+                <input id="confirm" name="confirm" type="password" autocomplete="new-password" placeholder="Repita a senha">
+                <button type="button" class="toggle-pw" data-target="confirm" aria-label="Mostrar senha" aria-pressed="false">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+                </button>
+              </div>
+              <p class="field-error" hidden></p>
+            </div>
+
+            <div class="row">
+              <label class="check"><input type="checkbox" id="remember"><span>Manter conectado</span></label>
+              <a class="link" id="forgotBtn" href="esqueci-senha.html?perfil=aluno">Esqueci a senha</a>
+            </div>
+
+            <button class="btn" id="submitBtn" type="submit"><span class="btn-label">Entrar</span><span class="spinner" aria-hidden="true"></span></button>
+          </form>
+
+          <p class="alt-link">Primeiro acesso? <a id="firstLink" href="primeiro-acesso.html?perfil=aluno">Cadastre-se aqui</a></p>
+
+          <p class="hint"><a href="alunos-demo.html">Ver lista de alunos de teste (RA e matrícula)</a></p>
+
+          <p class="hint">Protótipo: os dados ficam só neste navegador. No primeiro acesso você cria a senha; depois, é só digitá-la.</p>
+        </div>
+
+        <div id="successView" class="success" hidden>
+          <div class="success-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></div>
+          <h2>Acesso liberado!</h2>
+          <p>Bem-vindo(a) ao app Colombo.</p>
+          <dl>
+            <div><dt>Perfil</dt><dd data-slot="role"></dd></div>
+            <div><dt>Identificação</dt><dd data-slot="who"></dd></div>
+            <div><dt>Acesso anterior</dt><dd data-slot="last"></dd></div>
+            <div><dt>Agora</dt><dd data-slot="now"></dd></div>
+          </dl>
+          <button class="btn btn--ghost" id="logoutBtn" type="button">Sair da conta</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/core.js"></script>
+  <script src="js/turmas.js"></script>
+  <script src="js/aluno.js"></script>
+</body>
+</html>

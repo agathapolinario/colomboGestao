@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alunos de teste · Colombo</title>
+  <link rel="icon" href="assets/logo.jpg">
+  <style>
+    body{font-family:system-ui,Arial,sans-serif;margin:0;background:#f4f5fb;color:#1c2040}
+    main{max-width:960px;margin:0 auto;padding:20px 16px}
+    h1{margin:0 0 4px;color:#2d38a8;font-size:1.4rem} p{color:#555;margin:4px 0 14px}
+    .bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+    select,input{padding:10px;border:1px solid #c9cce6;border-radius:8px;font-size:1rem;background:#fff}
+    .wrap{overflow-x:auto;background:#fff;border-radius:12px;border:1px solid #dfe1f2}
+    table{border-collapse:collapse;width:100%;min-width:640px} th,td{padding:8px 10px;text-align:left;border-bottom:1px solid #eceef8;font-size:.92rem}
+    th{background:#eef0fb} .g{color:#2d38a8;font-weight:600} a{color:#2d38a8}
+  </style>
+</head>
+<body>
+<main>
+  <h1>Alunos de teste (simulação)</h1>
+  <p>Lista fictícia com ~1200 alunos. Use o RA e a matrícula na tela de <a href="aluno.html">acesso do aluno</a>. Dados gerados automaticamente em <code>js/turmas.js</code>.</p>
+  <div class="bar">
+    <select id="fTurma"><option value="">Todas as turmas</option></select>
+    <select id="fTipo"><option value="">Todos</option><option value="tec">Só curso técnico</option><option value="gre">Só Grêmio</option></select>
+    <input id="fBusca" placeholder="Buscar nome, RA ou matrícula" style="flex:1;min-width:200px">
+  </div>
+  <p id="cont"></p>
+  <div class="wrap"><table><thead><tr><th>Nome</th><th>Turma</th><th>Curso</th><th>RA</th><th>Matrícula</th><th>Grêmio</th></tr></thead><tbody id="rows"></tbody></table></div>
+</main>
+<script src="js/turmas.js"></script>
+<script>
+  const T = TURMAS, $ = (s) => document.querySelector(s);
+  const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  T.turmas.forEach((t, i) => $('#fTurma').insertAdjacentHTML('beforeend', `<option value="${i}">${esc(`${t.serie} ${t.letra} · ${t.turno}${t.curso ? ' · ' + T.CURSOS[t.curso].nome + ' (' + T.CURSOS[t.curso].inst + ')' : ''}`)}</option>`));
+  function draw() {
+    const t = $('#fTurma').value, tipo = $('#fTipo').value, q = $('#fBusca').value.trim().toLowerCase();
+    const sel = t === '' ? null : T.turmas[Number(t)];
+    const r = T.lista.filter((a) => (!sel || (a.serie === sel.serie && a.letra === sel.letra && a.turno === sel.turno))
+      && (tipo !== 'tec' || a.curso) && (tipo !== 'gre' || a.gremio)
+      && (!q || a.nome.toLowerCase().includes(q) || a.ra.includes(q) || a.matricula.includes(q)));
+    $('#cont').textContent = `${r.length} aluno(s)${r.length > 80 ? ' — mostrando os 80 primeiros' : ''}`;
+    $('#rows').innerHTML = r.slice(0, 80).map((a) => `<tr><td>${esc(a.nome)}</td><td>${esc(T.rotulo(a))}</td><td>${a.curso ? esc(T.CURSOS[a.curso].nome + ' (' + T.CURSOS[a.curso].inst + ')') : '—'}</td><td>${a.ra}</td><td>${a.matricula}</td><td class="g">${esc(a.gremio || '')}</td></tr>`).join('');
+  }
+  ['#fTurma', '#fTipo'].forEach((s) => $(s).onchange = draw); $('#fBusca').oninput = draw; draw();
+</script>
+</body>
+</html>

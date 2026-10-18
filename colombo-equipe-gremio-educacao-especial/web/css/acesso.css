@@ -1,0 +1,33 @@
+/* Primeiro acesso + Esqueci a senha · complementos da base */
+.acesso .card { max-width: 520px; }
+
+.fields { display: grid; grid-template-columns: 1fr 1fr; column-gap: 12px; }
+.fields .field { grid-column: span 2; min-width: 0; }
+.fields .field--half { grid-column: span 1; }
+@media (max-width: 520px) { .fields .field--half { grid-column: span 2; } }
+
+.section-label {
+  margin: 6px 0 14px; padding-top: 16px; border-top: 1px dashed var(--line);
+  font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
+}
+
+.alt-link { margin: 18px 0 0; text-align: center; font-size: 0.9rem; color: var(--muted); }
+.alt-link a, .alt-link .link, a.link, .status a { font-weight: 600; text-decoration: none; }
+.alt-link a:hover, .alt-link .link:hover { text-decoration: underline; }
+.status a { color: inherit; text-decoration: underline; }
+
+a.btn { display: grid; place-items: center; text-decoration: none; }
+.demo-code { margin-bottom: 14px; }
+.demo-code strong { letter-spacing: 0.12em; font-size: 1.05em; }
+
+.page-coordenacao .alt-link a, .page-coordenacao .alt-link .link { color: #f2c867; }
+
+/* Lista de cargos (Coordenação, Direção e Equipe) */
+.input select {
+  width: 100%; height: 52px; padding: 0 16px;
+  border: 1.5px solid var(--line); border-radius: 14px;
+  background: var(--surface-2); color: var(--text);
+  font: inherit; font-size: 1rem; appearance: auto;
+}
+.input select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 18%, transparent); }
+.input select option { background: var(--surface); color: var(--text); }

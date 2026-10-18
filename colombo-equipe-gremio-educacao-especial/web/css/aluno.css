@@ -1,0 +1,11 @@
+/* Aluno · índigo → azul, painel da marca à esquerda */
+.page-aluno {
+  --accent: #2d38a8;
+  --accent-2: #4f6bff;
+  --accent-soft: #9fc0ff;
+  --panel-grad: linear-gradient(150deg, #181d5e 0%, #2d38a8 50%, #4f8bff 100%);
+}
+
+.page-aluno .brand-panel::before {
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.03));
+}

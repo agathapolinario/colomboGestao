@@ -1,0 +1,41 @@
+/* Coordenação / Direção · tema escuro com detalhe dourado */
+.page-coordenacao {
+  --accent: #5a67e8;
+  --accent-2: #8a94ff;
+  --accent-soft: #f2c867;
+  --bg: #0d1030;
+  --surface: #151a47;
+  --surface-2: #1b2158;
+  --text: #eef0ff;
+  --muted: #a4a9d4;
+  --line: #2b3275;
+  --shadow: 0 30px 70px -30px rgba(0, 0, 0, 0.7);
+  --panel-grad: linear-gradient(160deg, #0a0c26 0%, #151a5c 60%, #232a86 100%);
+}
+
+.page-coordenacao .shell { grid-template-columns: minmax(300px, 0.9fr) minmax(420px, 1.2fr); }
+
+.page-coordenacao .brand-panel::before { background: rgba(242, 200, 103, 0.08); }
+.page-coordenacao .brand-copy h1 { background: linear-gradient(90deg, #fff, #f2c867); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.page-coordenacao .brand-points li::before { background: #f2c867; }
+
+.page-coordenacao .card { background: linear-gradient(180deg, #181e55, #131846); }
+.page-coordenacao .role-chip { color: #f2c867; background: rgba(242, 200, 103, 0.14); }
+.page-coordenacao .input input { color: var(--text); }
+.page-coordenacao .input input::placeholder { color: #6f75ad; }
+.page-coordenacao .input input:focus { background: #1d2360; }
+.page-coordenacao .btn { color: #0d1030; background: linear-gradient(135deg, #f2c867, #ffe19a); box-shadow: 0 16px 30px -16px #f2c867; }
+.page-coordenacao .btn--ghost { color: var(--text); background: transparent; box-shadow: none; }
+.page-coordenacao .segmented input:checked + span { color: #0d1030; background: linear-gradient(135deg, #f2c867, #ffe19a); box-shadow: 0 8px 18px -8px #f2c867; }
+.page-coordenacao .link { color: #f2c867; }
+.page-coordenacao .check input { accent-color: #f2c867; }
+.page-coordenacao .badge--new { color: #ffe19a; background: rgba(242, 200, 103, 0.14); }
+.page-coordenacao .badge--back { color: #8cf0c8; background: rgba(60, 207, 154, 0.14); }
+.page-coordenacao .status--error { color: #ffb4bc; background: rgba(217, 58, 74, 0.18); }
+.page-coordenacao .status--info { color: #c7ccff; background: rgba(90, 103, 232, 0.18); }
+.page-coordenacao .status--ok { color: #8cf0c8; background: rgba(60, 207, 154, 0.14); }
+.page-coordenacao .toggle-pw:hover { color: #f2c867; background: rgba(242, 200, 103, 0.12); }
+
+@media (max-width: 900px) {
+  .page-coordenacao .shell { grid-template-columns: 1fr; }
+}

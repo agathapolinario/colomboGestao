@@ -1,0 +1,20 @@
+/* Responsável · índigo → verde-azulado, painel da marca à direita */
+.page-responsavel {
+  --accent: #1f4fa8;
+  --accent-2: #12a39a;
+  --accent-soft: #8ff0e4;
+  --panel-grad: linear-gradient(150deg, #1a1f63 0%, #25479f 50%, #12a39a 100%);
+}
+
+.page-responsavel .shell { grid-template-columns: minmax(400px, 1.1fr) minmax(320px, 1fr); }
+.page-responsavel .brand-panel { order: 2; }
+.page-responsavel .form-panel { order: 1; }
+
+.page-responsavel .brand-panel::before { left: -140px; right: auto; top: auto; bottom: -140px; }
+.page-responsavel .brand-panel::after { left: auto; right: -110px; bottom: auto; top: -90px; }
+
+@media (max-width: 900px) {
+  .page-responsavel .shell { grid-template-columns: 1fr; }
+  .page-responsavel .brand-panel { order: 0; }
+  .page-responsavel .form-panel { order: 1; }
+}

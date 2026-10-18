@@ -1,0 +1,19 @@
+.seg4{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.pe{margin:0;background:#eef1fb;color:#14183a;font:16px/1.45 Inter,system-ui,sans-serif}
+.pe *{box-sizing:border-box}.pe .w{max-width:980px;margin:0 auto;padding:14px}
+.pe header{display:flex;gap:10px;align-items:center;flex-wrap:wrap;background:linear-gradient(135deg,#0f766e,#2d4fe0);color:#fff;padding:14px 18px;border-radius:18px}
+.pe header h1{margin:0;font-size:1.2rem;flex:1}.pe header small{display:block;opacity:.85;font-weight:400}
+.pe a.b,.pe button,.pe .b{font:inherit;cursor:pointer;border:0;border-radius:12px;padding:9px 14px;font-weight:600;background:#2d4fe0;color:#fff;text-decoration:none;display:inline-block}
+.pe .g{background:#fff;color:#2d4fe0;border:1.5px solid #2d4fe0}.pe header .g{background:rgba(255,255,255,.15);color:#fff;border-color:#fff}
+.pe .ok{background:#0f9d6e}.pe .bad{background:#e0364a}
+.pe .c{background:#fff;border:1px solid #d6e0fa;border-radius:18px;padding:16px;margin-top:14px}.pe h2{margin:0 0 10px;font-size:1.05rem}
+.pe form{display:grid;gap:8px}.pe input,.pe select,.pe textarea{font:inherit;padding:9px 11px;border:1px solid #cbd5f3;border-radius:10px;width:100%;background:#fff;color:inherit}
+.pe .r{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.pe .r>*{flex:1 1 140px}.pe .r>.b,.pe .r>button{flex:0 0 auto}
+.pe .it{border:1px solid #e1e7fa;border-radius:14px;padding:12px;margin-top:10px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.pe .it>div{flex:1 1 200px}.pe .it small,.pe .m{color:#5b6392}.pe .sos{border-color:#e0364a;background:#fff1f2}
+.pe .pl{display:inline-block;padding:2px 10px;border-radius:99px;font-size:.78rem;font-weight:700;background:#fff4d6;color:#8a5a00}.pe .pl.a{background:#dbe7ff;color:#1d3fb8}.pe .pl.f{background:#d9f7ea;color:#0a7a54}
+.pe nav.t{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}.pe nav.t button{background:#fff;color:#2d4fe0;border:1.5px solid #cbd5f3}.pe nav.t button.on{background:#2d4fe0;color:#fff}
+.pe .msg{padding:8px 12px;border-radius:12px;background:#f0f4ff;margin:6px 0}.pe .chat{max-height:360px;overflow:auto}
+.pe table{width:100%;border-collapse:collapse}.pe td,.pe th{padding:7px;border-bottom:1px solid #e6ebfb;text-align:left}
+.pe .blk{padding:6px 8px;border-radius:8px;min-height:1.6em;outline:0}.pe .blk:focus{background:#f0f4ff}.pe .h{font-size:1.3rem;font-weight:700}
+.pe .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#14183a;color:#fff;padding:10px 18px;border-radius:99px;z-index:9}

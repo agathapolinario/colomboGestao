@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="claro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2d38a8">
+  <title>Painel do responsável · Colombo</title>
+  <link rel="icon" href="assets/logo.jpg">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/painel-aluno.css">
+  <link rel="stylesheet" href="css/painel-professor.css">
+</head>
+<body>
+<div class="app">
+  <aside class="side" id="side">
+    <div class="side-head"><img src="assets/logo.jpg" alt="Logo Colombo de Almeida" class="side-logo"><div><strong>Colombo de Almeida</strong><small>Área do responsável</small></div></div>
+    <nav class="nav" id="nav" aria-label="Menu principal"></nav>
+    <button class="logout" id="logout"></button>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+  <div class="main">
+    <header class="top"><button class="burger" id="burger" aria-label="Abrir menu"></button><h1 id="title" tabindex="-1">Início</h1><div class="who"><span id="whoName"></span> <img id="avatarTop" class="avatar" alt="Sua foto de perfil"></div></header>
+    <main id="content" class="content"></main>
+  </div>
+</div>
+<script src="js/core.js"></script>
+<script src="js/turmas.js"></script>
+<script src="js/docencia.js"></script>
+<script src="js/gvis.js"></script>
+<script src="js/painel-responsavel.js"></script>
+</body>
+</html>

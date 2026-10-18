@@ -1,0 +1,23 @@
+/* Painel do professor · só acrescenta ao painel-aluno.css (acessibilidade e pequenos blocos) */
+.sr{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.skip{position:absolute;left:-9999px;top:0;z-index:99;background:var(--accent);color:var(--on-accent);padding:10px 16px}
+.skip:focus{left:8px;top:8px}
+.week5{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.aula{border-left:5px solid var(--c,var(--accent));padding:8px 10px;border-radius:10px;background:var(--surface-2);margin-top:8px;font-size:.88rem}
+.aula small{display:block;color:var(--muted)}
+.chk{display:flex;gap:8px;align-items:center;font-weight:400}.chk input{width:auto}
+.bars{display:flex;gap:6px;align-items:flex-end;height:70px}.bars i{flex:1;background:var(--accent);border-radius:6px 6px 0 0;min-width:10px}
+.row2{display:grid;grid-template-columns:260px 1fr;gap:14px}@media(max-width:800px){.row2{grid-template-columns:1fr}}
+.pg{display:grid;gap:6px;max-height:420px;overflow:auto}
+.pg button{text-align:left}
+.pg button.on{border-color:var(--accent)}
+/* recursos de acessibilidade (opcionais, escolhidos pelo professor) */
+.a-texto{font-size:118%}.a-texto .content,.a-texto .nav{font-size:1.12rem}
+.a-contraste{--bg:#000;--surface:#000;--surface-2:#111;--text:#fff;--muted:#fff;--line:#fff;--accent:#ffd400;--accent-2:#ffd400;--on-accent:#000}
+.a-contraste .card,.a-contraste .tile{border:2px solid #fff}
+.a-teclado :focus-visible{outline:4px solid #ff9f1c;outline-offset:3px}
+.a-animacoes *,.a-animacoes *::before{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+.a-estimulos{--page:none}.a-estimulos *{box-shadow:none!important;background-image:none}
+.a-estimulos .tile .ti,.a-estimulos .btn{background:var(--accent)}
+.a-agendaVisual .aula{border-left-width:12px;font-size:1rem;padding:12px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
